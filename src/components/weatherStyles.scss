@@ -1,6 +1,7 @@
 main{
     width: 100%;
 }
+
 .container{
     border: 1px solid #cdcdcd;
     border-radius: 5px;
@@ -11,10 +12,17 @@ main{
 
 .row-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
+}
+
+.left-aligned{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
 }
 
 .icon{
