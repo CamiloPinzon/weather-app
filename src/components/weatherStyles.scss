@@ -64,3 +64,9 @@ main{
         font-size: 1.5rem;
     }
 }
+
+.forecast{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
