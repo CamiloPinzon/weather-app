@@ -1,0 +1,58 @@
+main{
+    width: 100%;
+}
+.container{
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.row-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.icon{
+    font-size: 2rem;
+}
+
+.location{
+    display: flex;
+    flex-direction: column;
+
+    &__form{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    input{
+        border: none;
+        border-bottom: 1px solid #cdcdcd;
+        padding: 5px;
+        width: 100%;
+    }
+}
+
+.weather{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 5px;
+
+    &__temperature{
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    &__condition{
+        font-size: 1.5rem;
+    }
+}
