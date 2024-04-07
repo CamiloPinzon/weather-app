@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { fetchWeatherData } from "../api/weatherApi";
+import { fetchWeatherData } from "../../api/weatherApi";
 import { LiaCloudShowersHeavySolid, LiaWindSolid } from "react-icons/lia";
 import { TiWeatherWindyCloudy } from "react-icons/ti";
 import { WiSolarEclipse } from "react-icons/wi";
