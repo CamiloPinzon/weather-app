@@ -1,28 +1,3 @@
 main{
     width: 100%;
 }
-
-.row-container{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.left-aligned{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: center;
-}
-
-.icon{
-    font-size: 2rem;
-}
-
-.forecast{
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
