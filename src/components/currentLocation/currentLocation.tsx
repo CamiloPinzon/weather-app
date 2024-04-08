@@ -4,7 +4,7 @@ import CurrentWeather from '../currentWeather/currentWeather';
 import './currentLocation.scss';
 
 interface CurrentLocationProps {
-    location: string
+    location: string;
 }
 
 const CurrentLocation = ({ location }: CurrentLocationProps) => {
