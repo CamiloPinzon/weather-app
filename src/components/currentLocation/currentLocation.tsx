@@ -1,13 +1,13 @@
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+
 import InputComponent from '../inputComponent/inputComponent';
 import CurrentWeather from '../currentWeather/currentWeather';
 
 import './currentLocation.scss';
 
-interface CurrentLocationProps {
-    location: string;
-}
-
-const CurrentLocation = ({ location }: CurrentLocationProps) => {
+const CurrentLocation = () => {
+	const location = useSelector((state: RootState) => state.weather.location);
     return (
 			<section className="container">
 				<div className="location">

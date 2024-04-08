@@ -1,24 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store/store";
 
 import { fetchWeatherData } from "../../api/weatherApi";
+import { setWeatherData } from "../../features/weatherSlice";
 import CurrentLocation from "../currentLocation/currentLocation";
 import ForecastComponent from "../forecastComponent/forecastComponent";
-import { LiaCloudShowersHeavySolid } from "react-icons/lia";
+/*import { LiaCloudShowersHeavySolid } from "react-icons/lia";
 import { LuCloudy } from "react-icons/lu";
 import { RiSunCloudyLine } from "react-icons/ri";
-import { MdOutlineWbSunny } from "react-icons/md";
+import { MdOutlineWbSunny } from "react-icons/md";*/
 
 import "./weatherStyles.scss";
 
 const WeatherComponent = () => {
-	const [weatherData, setWeatherData] = useState<object | null>(null);
-	const [location, setLocation] = useState("New York");
+    const dispatch = useDispatch<AppDispatch>();
+    const location = useSelector((state: RootState) => state.weather.location);
 
-	/*useEffect(() => {
+	useEffect(() => {
         const fetchData = async () => {
             try {
                 const data = await fetchWeatherData(location);
-                setWeatherData(data);
+                dispatch(setWeatherData(data));
             } catch (error) {
                 console.error(error);
                 throw error;
@@ -26,11 +29,11 @@ const WeatherComponent = () => {
         };
 
         fetchData();
-    }, []);*/
+    }, [dispatch, location]);
 
 	return (
 		<main>
-			<CurrentLocation location={location} />
+			<CurrentLocation />
 			<ForecastComponent />
 		</main>
 	);
