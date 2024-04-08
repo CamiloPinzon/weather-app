@@ -1,23 +1,33 @@
-import InputComponent from '../inputComponent/inputComponent';
-import CurrentWeather from '../currentWeather/currentWeather';
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
-import './currentLocation.scss';
+import InputComponent from "../inputComponent/inputComponent";
+import CurrentWeather from "../currentWeather/currentWeather";
 
-interface CurrentLocationProps {
-    location: string;
-}
+import { farenheitToCelsius } from "../../utils/convertions";
 
-const CurrentLocation = ({ location }: CurrentLocationProps) => {
-    return (
-			<section className="container">
-				<div className="location">
-					<div className="location__form">
-                        <InputComponent value={location} />
-					</div>
+import "./currentLocation.scss";
+
+const CurrentLocation = () => {
+	const location = useSelector((state: RootState) => state.weather.location);
+	const weather = useSelector(
+		(state: RootState) =>
+			state.weather.weatherData.current_observation.condition
+	);
+	const { temperature, text } = weather;
+	return (
+		<section className="container">
+			<div className="location">
+				<div className="location__form">
+					<InputComponent value={location} />
 				</div>
-				<CurrentWeather temperature={0} condition="sunny" />
-			</section>
-		);
-}
+			</div>
+			<CurrentWeather
+				temperature={farenheitToCelsius(temperature)}
+				condition={text}
+			/>
+		</section>
+	);
+};
 
 export default CurrentLocation;

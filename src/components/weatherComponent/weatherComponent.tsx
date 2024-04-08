@@ -1,36 +1,41 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store/store";
 
 import { fetchWeatherData } from "../../api/weatherApi";
+import { setWeatherData } from "../../features/weatherSlice";
 import CurrentLocation from "../currentLocation/currentLocation";
 import ForecastComponent from "../forecastComponent/forecastComponent";
-import { LiaCloudShowersHeavySolid } from "react-icons/lia";
+/*import { LiaCloudShowersHeavySolid } from "react-icons/lia";
 import { LuCloudy } from "react-icons/lu";
 import { RiSunCloudyLine } from "react-icons/ri";
-import { MdOutlineWbSunny } from "react-icons/md";
+import { MdOutlineWbSunny } from "react-icons/md";*/
 
 import "./weatherStyles.scss";
+import { initialState } from "../../utils/initialState";
 
 const WeatherComponent = () => {
-	const [weatherData, setWeatherData] = useState<object | null>(null);
-	const [location, setLocation] = useState("New York");
+    const dispatch = useDispatch<AppDispatch>();
+    const location = useSelector((state: RootState) => state.weather.location);
 
-	/*useEffect(() => {
+	useEffect(() => {
         const fetchData = async () => {
             try {
                 const data = await fetchWeatherData(location);
-                setWeatherData(data);
+                dispatch(setWeatherData(data));
             } catch (error) {
                 console.error(error);
-                throw error;
+                dispatch(setWeatherData(initialState.weatherData));
             }
         };
 
         fetchData();
-    }, []);*/
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [location]);
 
 	return (
 		<main>
-			<CurrentLocation location={location} />
+			<CurrentLocation />
 			<ForecastComponent />
 		</main>
 	);
