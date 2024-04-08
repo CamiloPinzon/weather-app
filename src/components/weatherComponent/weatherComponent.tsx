@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { fetchWeatherData } from "../../api/weatherApi";
+import CurrentLocation from "../currentLocation/currentLocation";
 import { LiaCloudShowersHeavySolid, LiaWindSolid } from "react-icons/lia";
 import { TiWeatherWindyCloudy } from "react-icons/ti";
 import { WiSolarEclipse } from "react-icons/wi";
@@ -30,17 +31,7 @@ const WeatherComponent = () => {
 
 	return (
 		<main>
-			<section className="container">
-				<div className="location">
-					<div className="location__form">
-						<input type="text" name="city" id="city" value={location} />
-					</div>
-				</div>
-				<div className="weather">
-					<span className="weather__temperature">23°</span>
-					<span className="weather__condition">Showers</span>
-				</div>
-			</section>
+			<CurrentLocation location={location} />
 			<section className="container">
 				<div className="container">
 					<h2>Today</h2>
