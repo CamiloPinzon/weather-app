@@ -21,22 +21,6 @@ main{
     font-size: 2rem;
 }
 
-.weather{
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    padding: 5px;
-
-    &__temperature{
-        font-size: 3rem;
-        font-weight: bold;
-    }
-
-    &__condition{
-        font-size: 1.5rem;
-    }
-}
-
 .forecast{
     display: flex;
     gap: 10px;

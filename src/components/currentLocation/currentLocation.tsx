@@ -1,4 +1,5 @@
 import InputComponent from '../inputComponent/inputComponent';
+import CurrentWeather from '../currentWeather/currentWeather';
 
 import './currentLocation.scss';
 
@@ -14,10 +15,7 @@ const CurrentLocation = ({ location }: CurrentLocationProps) => {
                         <InputComponent value={location} />
 					</div>
 				</div>
-				<div className="weather">
-					<span className="weather__temperature">23°</span>
-					<span className="weather__condition">Showers</span>
-				</div>
+				<CurrentWeather temperature={0} condition="sunny" />
 			</section>
 		);
 }
