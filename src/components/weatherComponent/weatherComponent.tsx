@@ -32,55 +32,6 @@ const WeatherComponent = () => {
 		<main>
 			<CurrentLocation location={location} />
 			<ForecastComponent />
-			<section className="container">
-				<div className="container forecast">
-					<div className="container">
-						<div>
-							<b>Thu</b>
-						</div>
-						<LuCloudy className="icon" />
-						<div>Cloudy</div>
-						<div>High: 49°</div>
-						<div>Low: 35°</div>
-					</div>
-					<div className="container">
-						<div>
-							<b>Fri</b>
-						</div>
-						<RiSunCloudyLine className="icon" />
-						<div>Partly Cloudy</div>
-						<div>High: 49°</div>
-						<div>Low: 35°</div>
-					</div>
-					<div className="container">
-						<div>
-							<b>Sat</b>
-						</div>
-						<LiaCloudShowersHeavySolid className="icon" />
-						<div>Showers</div>
-						<div>High: 49°</div>
-						<div>Low: 35°</div>
-					</div>
-					<div className="container">
-						<div>
-							<b>Sun</b>
-						</div>
-						<RiSunCloudyLine className="icon" />
-						<div>Partly Cloudy</div>
-						<div>High: 49°</div>
-						<div>Low: 35°</div>
-					</div>
-					<div className="container">
-						<div>
-							<b>Mon</b>
-						</div>
-						<MdOutlineWbSunny className="icon" />
-						<div>Sunny</div>
-						<div>High: 49°</div>
-						<div>Low: 35°</div>
-					</div>
-				</div>
-			</section>
 		</main>
 	);
 };
