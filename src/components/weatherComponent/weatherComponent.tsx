@@ -12,6 +12,7 @@ import { RiSunCloudyLine } from "react-icons/ri";
 import { MdOutlineWbSunny } from "react-icons/md";*/
 
 import "./weatherStyles.scss";
+import { initialState } from "../../utils/initialState";
 
 const WeatherComponent = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -24,12 +25,13 @@ const WeatherComponent = () => {
                 dispatch(setWeatherData(data));
             } catch (error) {
                 console.error(error);
-                throw error;
+                dispatch(setWeatherData(initialState.weatherData));
             }
         };
 
         fetchData();
-    }, [dispatch, location]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [location]);
 
 	return (
 		<main>
