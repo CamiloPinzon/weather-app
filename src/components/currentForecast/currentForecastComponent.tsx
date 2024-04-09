@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { farenheitToCelsius, milesToKilometers } from "../../utils/convertions";
+import { getWeatherIcon } from "../../utils/weatherIcons";
 
-import { LiaCloudShowersHeavySolid, LiaWindSolid } from "react-icons/lia";
+import { LiaWindSolid } from "react-icons/lia";
 import { TiWeatherWindyCloudy } from "react-icons/ti";
 import { WiSolarEclipse } from "react-icons/wi";
 
@@ -19,7 +20,7 @@ const CurrentForecastComponent = () => {
 			<h2>Today</h2>
 			<div className="row-container">
 				<div>
-					<LiaCloudShowersHeavySolid className="icon" />
+					{getWeatherIcon(condition.text)}
 					<div className="left-aligned">
 						<div>{`${farenheitToCelsius(condition.temperature)}°`}</div>
 						<div>{condition.text}</div>

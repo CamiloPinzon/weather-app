@@ -1,6 +1,5 @@
 import { farenheitToCelsius } from "../../utils/convertions";
-
-import { LuCloudy } from "react-icons/lu";
+import { getWeatherIcon } from "../../utils/weatherIcons";
 import "./forecastCardStyles.scss";
 
 interface ForecastCardProps {
@@ -16,7 +15,7 @@ const ForecastCardComponent = ({day, high, low, text}: ForecastCardProps) => {
 			<div>
 				<b>{day}</b>
 			</div>
-			<LuCloudy className="icon" />
+			<div>{getWeatherIcon(text)}</div>
 			<div>{text}</div>
 			<div>{`High: ${farenheitToCelsius(high)}°`}</div>
 			<div>{`Low: ${farenheitToCelsius(low)}°`}</div>

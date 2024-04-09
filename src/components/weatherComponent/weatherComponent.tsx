@@ -6,10 +6,6 @@ import { fetchWeatherData } from "../../api/weatherApi";
 import { setWeatherData } from "../../features/weatherSlice";
 import CurrentLocation from "../currentLocation/currentLocation";
 import ForecastComponent from "../forecastComponent/forecastComponent";
-/*import { LiaCloudShowersHeavySolid } from "react-icons/lia";
-import { LuCloudy } from "react-icons/lu";
-import { RiSunCloudyLine } from "react-icons/ri";
-import { MdOutlineWbSunny } from "react-icons/md";*/
 
 import "./weatherStyles.scss";
 import { initialState } from "../../utils/initialState";
